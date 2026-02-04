@@ -5,6 +5,7 @@
 *.toc
 *.synctex.gz
 *.bbl
+*.blg
 
 /*.pdf
 /.vscode/
