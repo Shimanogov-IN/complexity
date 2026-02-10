@@ -23,10 +23,7 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         files: main.pdf
-      with:
-          tag_name: $NOW
-          release_name: ${{ steps.date.outputs.date }}
-          draft: false
-          prerelease: false
-        
-
+        tag_name: $NOW
+        release_name: ${{ steps.date.outputs.date }}
+        draft: false
+        prerelease: false
