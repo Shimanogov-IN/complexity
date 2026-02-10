@@ -24,6 +24,5 @@ jobs:
       with:
         files: main.pdf
         tag_name: $NOW
-        release_name: ${{ steps.date.outputs.date }}
         draft: false
         prerelease: false
