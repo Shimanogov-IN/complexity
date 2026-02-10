@@ -1,6 +1,6 @@
 name: Publish current PDF
 permissions:
-  contents: write
+  write-all
 on:
   push:
 #    branches:
