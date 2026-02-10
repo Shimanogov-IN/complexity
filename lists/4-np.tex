@@ -45,7 +45,12 @@ $\delta:\left(Q \backslash\left\{q_a, q_r\right\}\right) \times \Gamma^k
     В частности, недетерминизм не расширяет класс разрешимых языков $\decide$.
 \end{theorem}
 \begin{proof}
-    % TODO
+    Как уже упоминалось, у функции перехода может быть не больше некоторой константы $k$ значений.
+    Значит, общее количество конфигураций во всех вычислениях,
+    начинающихся с данного входа и имеющих длину не больше $T$,
+    не превышает $K^T= 2^O(T)$. За время $2^{O(T(n))}$ можно все эти конфигурации перебрать
+    (например, обходя дерево) и проверить, встречается ли среди них принимающая.
+    Если встречается, то данный вход лежит в языке, иначе не лежит.
 \end{proof}
 
 \begin{theorem}[Теорема о недетерминированной иерархии по времени]
@@ -181,6 +186,40 @@ $\delta:\left(Q \backslash\left\{q_a, q_r\right\}\right) \times \Gamma^k
     % TODO
 \end{proof}
 
-% TODO add padding
+\begin{definition}[$\EXP, \NEXP$]
+$\EXP = \bigcup_{k=0}^{\infty} \Dtime \left(2^{n^k}\right)$,
+$\NEXP = \bigcup_{k=0}^{\infty} \Ntime \left(2^{n^k}\right)$
+\end{definition}
+
+\begin{problem}
+$\poly = \np \Ra \EXP = \NEXP$
+\end{problem}
+\begin{solution}
+Предположим $L \in \text{NTIME}\left(2^{n^c}\right)$
+и разрешается НМТ $M$. Докажем, что язык
+$$
+L_{\mathrm{pad}} = \left\{\left\langle x, 1^{\mid 2^{|x| c}}\right\rangle: x \in L\right\}
+$$
+лежит в NP.
+
+Предъявим НМТ для $L_{\mathrm{pad}}$: по входу $y$,
+сначала проверим, что существует $z$,
+такое что $y=\left\langle z, 1^{\left.2^{|z|}\right|^c}\right\rangle$.
+Если нет, то отвергнем слово, иначе запустим $M$ на $z$
+в течении $2^{|z|^c}$ шагов и выведем ответ.
+Очевидно, что время работы полиномиально по $|y|$,
+а значит $L_{\mathrm{pad}} \in \text{NP}$.
+
+Однако, если $\text{P}=\text{NP}$, то $L_{\mathrm{pad}}$ лежит в $\poly$.
+Но тогда $L$ лежит в $\EXP$: что бы проверить входит ли $x$ в $L$,
+нам нужно просто дописать необходимое количество единиц и
+проверить результат не вхождение в $L_{\mathrm{pad}}$
+используя полиномиальную ДМТ для $L_{\mathrm{pad}}$.
+\end{solution}
+\begin{note}
+Прием, который мы использовали только что, называется padding.
+\end{note}
+
+% TODO morphisms
 
 
