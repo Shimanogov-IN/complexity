@@ -1,12 +1,14 @@
 name: Publish current PDF
 on:
   push:
+    branches:
+    - main
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
     - name: Get current time
-      run: echo "NOW=$(time +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      run: echo "NOW=$(time'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
     - name: Set up Git repository
       uses: actions/checkout@v6
     - name: Compile source
@@ -23,6 +25,6 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         files: main.pdf
-        tag_name: $NOW
+        tag_name: ${{ env.NOW }}
         draft: false
         prerelease: false
