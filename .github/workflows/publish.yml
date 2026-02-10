@@ -1,0 +1,32 @@
+name: Publish current PDF
+on:
+  push:
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get current time
+      run: echo "NOW=$(time +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+    - name: Set up Git repository
+      uses: actions/checkout@v6
+    - name: Compile source
+      uses: xu-cheng/latex-action@v4
+      with:
+        root_file: main.tex
+        extra_system_packages: texmf-dist-latexextra
+    - name: Upload PDF file
+      uses: actions/upload-artifact@v6
+      with:
+        name: PDF
+        path: main.pdf
+    - name: Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: main.pdf
+      with:
+          tag_name: $NOW
+          release_name: ${{ steps.date.outputs.date }}
+          draft: false
+          prerelease: false
+        
+
