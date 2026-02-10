@@ -1,0 +1,39 @@
+\section{Класс $\conp$}
+
+Можно заметить, что доказательство замкнутости $\np$ по дополнению
+отсутствовало выше. Это не спроста:
+равенство $\np$ классу языков, таких, что их дополнение лежит в $\np$
+--- это открытый вопрос.
+
+\begin{definition}[$\conp$]
+    $\conp =\{L \mid \bar{L} \in \text{NP}\}$
+\end{definition}
+
+\begin{problem}
+Докажите, что:
+\begin{enumerate}
+    \item $\poly \subset \np \cap \conp$;
+    \item $\poly = \np \Ra \np = \conp$;
+    \item $\conp \neq \left(2^{\Sigma^*} \backslash \np\right)$;
+    \item $\np \subset \EXP$;
+    \item $\conp \subset \EXP$.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+    % TODO
+\end{solution}
+
+\begin{problem}
+Пусть $N$ --- полиномиальная НМТ,
+пусть для слова $x$ работа $N$ на входе $x$ порождает дерево вычислений $T_{N,x}$.
+Докажите включения:
+\begin{enumerate}
+    \item $L_1 = \{x \mid \text{существует принимающая ветка вычислений в $T_{N,x}$}\} \in \np$,
+    \item $L_2 = \{x \mid \text{не существует принимающей ветки вычислений в $T_{N,x}$}\} \in \conp$,
+    \item $L_3 = \{x \mid \text{все ветки вычислений в $T_{N,x}$ принимающие}\} \in \conp$,
+    \item $L_4 = \{x \mid \text{не все ветки вычислений в $T_{N,x}$ принимающие}\} \in \np$.
+\end{enumerate}
+\end{problem}
+\begin{solution}
+    % TODO
+\end{solution}
