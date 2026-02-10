@@ -3,8 +3,8 @@ permissions:
   contents: write
 on:
   push:
-#    branches:
-#    - main
+    branches:
+    - main
 jobs:
   publish:
     runs-on: ubuntu-latest
