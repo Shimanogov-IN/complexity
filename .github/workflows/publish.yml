@@ -6,6 +6,25 @@ on:
     branches:
     - main
 jobs:
+  
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v6
+      with:
+        persist-credentials: true
+    - name: Get linter
+      run: |
+        wget https://github.com/cmhughes/latexindent.pl/releases/latest/download/latexindent-linux 
+        chmod +x latexindent-linux
+    - name: Run linter
+      run: ./latexindent-linux --overwrite --silent main.tex
+    - name: Commit edit
+      uses: stefanzweifel/git-auto-commit-action@v7
+      with: 
+         commit_message: Linting indentation
+    
   publish:
     runs-on: ubuntu-latest
     steps:
