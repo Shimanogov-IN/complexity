@@ -168,7 +168,7 @@ $\delta:\left(Q \backslash\left\{q_a, q_r\right\}\right) \times \Gamma^k
     \item $\hamcycle =\{G \mid
               \text {в графе $G$ существует гамильтонов цикл}\}$;
     \item $\factoring =\{(N, a) \mid
-              \text {у числа $N$ существует простой делитель меньше $a$}\}$;
+              \text {у числа $N$ существует делитель меньше $a$}\}$;
     \item $\graphiso = \{(G, Q) \mid
               \text{граф $G$ изоморфен графу $Q$}\}$.
 \end{enumerate}
@@ -185,7 +185,7 @@ $\delta:\left(Q \backslash\left\{q_a, q_r\right\}\right) \times \Gamma^k
 
     Для остальных пунктов верификатор строится аналогично из <<очевидного сертификата>>:
     номера вершин входящих в полный подграф, раскраска графа,
-    номера вершин задающих гамильтонов цикл, соответствующий простой делитель, изоморфизм графов.
+    номера вершин задающих гамильтонов цикл, соответствующий делитель, изоморфизм графов.
 
 \end{solution}
 
@@ -223,7 +223,7 @@ $\poly = \np \Ra \EXP = \NEXP$
     Предположим $L \in \text{NTIME}\left(2^{n^c}\right)$
     и разрешается НМТ $M$. Докажем, что язык
     $$
-        L_{\mathrm{pad}} = \left\{\left\langle x, 1^{\mid 2^{|x| c}}\right\rangle: x \in L\right\}
+        L_{\mathrm{pad}} = \left\{\left\langle x, 1^{2^{|x|^c}}\right\rangle: x \in L\right\}
     $$
     лежит в NP.
 
