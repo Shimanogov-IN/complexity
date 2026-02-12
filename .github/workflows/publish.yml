@@ -23,7 +23,7 @@ jobs:
     - name: Run latexindent on main
       run: ./latexindent-linux --overwrite --silent main.tex
     - name: Run latexindent on all lists
-      run: for file in /lists/* do; ./latexindent-linux --overwrite --silent "$file"; done
+      run: for file in /lists/*; do ./latexindent-linux --overwrite --silent "$file"; done
     - name: Commit edit
       uses: stefanzweifel/git-auto-commit-action@v7
       with: 
