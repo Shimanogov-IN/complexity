@@ -220,7 +220,7 @@ $\delta:\left(Q \backslash\left\{q_a, q_r\right\}\right) \times \Gamma^k
 $\poly = \np \Ra \EXP = \NEXP$
 \end{problem}
 \begin{solution}
-			Предположим $L \in \text{NTIME}\left(2^{n^c}\right)$
+	Предположим $L \in \text{NTIME}\left(2^{n^c}\right)$
 	и разрешается НМТ $M$. Докажем, что язык
 	$$
 		L_{\mathrm{pad}} = \left\{\left\langle x, 1^{2^{|x|^c}}\right\rangle: x \in L\right\}
@@ -246,11 +246,11 @@ $\poly = \np \Ra \EXP = \NEXP$
 \end{note}
 
 \begin{problem}
-	Докажите, что $\poly = \np$ тогда и только тогда,
+Докажите, что $\poly = \np$ тогда и только тогда,
 когда $\poly$ замкнут относительно нестирающих морфизмов.
 \end{problem}
 \begin{solution}
-Пусть $\poly = \np$. Тогда рассмотрим образ $M$ языка $L$ под нестирающим морфизмом $\phi$.
+	Пусть $\poly = \np$. Тогда рассмотрим образ $M$ языка $L$ под нестирающим морфизмом $\phi$.
 	$M$ принадлежит $\np$ по следующей причине: сертификатом слова $\phi(x)$ является слово $x$,
 	верификатор вычисляет морфизм от сертификата, проверяет совпадение результата со входом
 	и проверяет принадлежность сертификата к $L$
