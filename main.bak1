@@ -1,0 +1,26 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{style}
+
+\title{Теория вычислительной сложности}
+\author{Шиманогов Игорь}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\input{lists/1-introduction}
+\input{lists/2-dtime}
+\input{lists/3-poly}
+\input{lists/4-np}
+\input{lists/5-conp}
+\input{lists/6-primes}
+
+    \bibliographystyle{plain}
+    \bibliography{refs}
+
+\end{document}
