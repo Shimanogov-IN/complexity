@@ -7,6 +7,8 @@
 *.bbl
 *.blg
 
+latexindent-linux
+
 /*.pdf
 /.vscode/
 
