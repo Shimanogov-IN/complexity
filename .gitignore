@@ -7,5 +7,10 @@
 *.bbl
 *.blg
 
+latexindent-linux
+
 /*.pdf
 /.vscode/
+
+*.bak0
+/lists/*.bak0
