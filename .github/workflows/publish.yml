@@ -16,14 +16,14 @@ jobs:
       with:
         persist-credentials: true
         ref: ${{ github.head_ref }}
-    - name: Get linter
+    - name: Get latexindent
       run: |
         wget https://github.com/cmhughes/latexindent.pl/releases/latest/download/latexindent-linux 
         chmod +x latexindent-linux
-    - name: Run linter
-      run: |
-        ./latexindent-linux --overwrite --silent main.tex
-        for file in /lists/* do; ./latexindent-linux --overwrite --silent "$file"; done
+    - name: Run latexindent on main
+      run: ./latexindent-linux --overwrite --silent main.tex
+    - name: Run latexindent on all lists
+      run: for file in /lists/* do; ./latexindent-linux --overwrite --silent "$file"; done
     - name: Commit edit
       uses: stefanzweifel/git-auto-commit-action@v7
       with: 
