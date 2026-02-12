@@ -21,11 +21,13 @@ jobs:
         wget https://github.com/cmhughes/latexindent.pl/releases/latest/download/latexindent-linux 
         chmod +x latexindent-linux
     - name: Run linter
-      run: ./latexindent-linux --overwrite --silent main.tex
+      run: |
+        ./latexindent-linux --overwrite --silent main.tex
+        for file in /lists/* do; ./latexindent-linux --overwrite --silent "$file"; done
     - name: Commit edit
       uses: stefanzweifel/git-auto-commit-action@v7
       with: 
-         commit_message: fix linting indentation
+         commit_message: fix indentation
     
   publish:
     needs: lint
