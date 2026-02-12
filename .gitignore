@@ -9,3 +9,6 @@
 
 /*.pdf
 /.vscode/
+
+*.bak0
+/lists/*.bak0
