@@ -27,6 +27,7 @@ jobs:
       uses: stefanzweifel/git-auto-commit-action@v7
       with: 
          commit_message: fix indentation
+         # TODO: compile from this commit
     
   publish:
     needs: lint
